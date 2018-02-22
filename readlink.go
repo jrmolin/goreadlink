@@ -19,7 +19,7 @@ func main() {
     // holds the arguments to the program.
 	argsWithoutProg := os.Args[1:]
 
-	for index, value := range argsWithoutProg {
+	for _, value := range argsWithoutProg {
 		abs, _ := filepath.Abs(value)
 		fmt.Println(abs)
 	}
