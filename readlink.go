@@ -19,6 +19,11 @@ func main() {
     // holds the arguments to the program.
 	argsWithoutProg := os.Args[1:]
 
+	if len(argsWithoutProg) == 0 {
+		fmt.Printf("Usage: %s <path/to/file/or/directory/or/link (can be relative)>\n", os.Args[0])
+		return
+	}
+
 	for _, value := range argsWithoutProg {
 		abs, _ := filepath.Abs(value)
 		fmt.Println(abs)
